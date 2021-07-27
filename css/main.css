@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 0;
+}
+
+header img {
+  height: 100px;
+  border-radius: 50%;
+}
+
+header h1 {
+  font-family: "Big Shoulders Display", cursive;
+  color: white;
+  letter-spacing: 5px;
+  font-weight: 700;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main #selector-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: space-between;
+  width: 30%;
+  margin-right: 20px;
+  padding: 30px 30px;
+  height: 500px;
+}
+
+main #selector-div div {
+  margin-bottom: 50px;
+}
+
+main #selector-div #select-verse {
+  margin-top: -50px;
+}
+
+main #selector-div #nxt-prev-chapt {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main #display-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  margin-left: 20px;
+  padding: 30px 50px;
+  height: 500px;
+}
+
+main #display-div #quotation-ref {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+main #display-div #quotation-ref p {
+  margin-right: 10px;
+}
+
+main #display-div #quotation-text {
+  padding: 20px 50px;
+}
+
+main #display-div #quotation-text p {
+  font-size: 20px;
+}
+
+main #display-div #quotation-version {
+  margin-left: 50px;
+}

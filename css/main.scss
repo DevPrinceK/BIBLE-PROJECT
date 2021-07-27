@@ -1,0 +1,104 @@
+// IMPORTING FONTS
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+// RESETTING
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// VARIABLES
+$header-font: "Big Shoulders Display", cursive;
+
+// MIXINS
+@mixin flex($dir, $justify, $align) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// HEADER STYLE
+header {
+  // display property = flex
+  @include flex(column, center, center);
+
+  // inside padding
+  padding: 25px 0;
+
+  // the logo inside the header element
+  img {
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  // the header title insde the header element
+  h1 {
+    font-family: $header-font;
+    color: white;
+    letter-spacing: 5px;
+    font-weight: 700;
+  }
+}
+
+// MAIN CONTENT STYLE
+// MAIN CONTENT STYLE
+main {
+  // display property = flex
+  @include flex(row, space-between, center);
+
+  // where the selection is done // book, chapter verse etc
+  #selector-div {
+    @include flex(column, left, space-between);
+    width: 30%;
+    margin-right: 20px;
+    padding: 30px 30px;
+    height: 500px;
+
+    div {
+      margin-bottom: 50px;
+    }
+
+    #select-verse {
+      margin-top: -50px;
+    }
+
+    // next / previous chapter
+    #nxt-prev-chapt {
+      @include flex(row, space-between, center);
+    }
+  }
+
+  // DISPLAY DIV
+  // where the display is done // the quotation
+  #display-div {
+    @include flex(column, center, center) width: 70%;
+    margin-left: 20px;
+    padding: 30px 50px;
+    height: 500px;
+
+    // QUOTATION REFERENCE
+    #quotation-ref {
+      @include flex(row, center, center);
+
+      p {
+        margin-right: 10px;
+      }
+    }
+
+    // QUOTATION TEXT
+    #quotation-text {
+      padding: 20px 50px;
+      p {
+        font-size: 20px;
+      }
+    }
+
+    // QUOTATION VERSION
+    #quotation-version {
+      margin-left: 50px;
+    }
+  }
+}
