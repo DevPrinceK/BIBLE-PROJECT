@@ -19,8 +19,7 @@
 
 </head>
 
-<body>
-
+<body onpageshow="start()">
     <!-- HEADER OF THE PAGE -->
     <header class="container-fluid bg-dark" id="header-container">
         <div id="my-logo">
@@ -46,7 +45,7 @@
 
             <!-- WHERE THE BOOK OF THE BIBLE IS SELECTED -->
             <div id="bible-book">
-                <select id="select-book" class="form-select">
+                <!-- <select id="select-book" class="form-select">
                     <option selected>Select Book</option>
                     <option>Genesis</option>
                     <option>Exodus</option>
@@ -56,7 +55,7 @@
                     <option>Joshua</option>
                     <option>Judges</option>
                     <option>2 Timothy</option>
-                </select>
+                </select> -->
             </div>
 
             <!-- CHAPTER OF THE SELECTED BOOK IS CHOSEN -->
@@ -108,7 +107,7 @@
                         </div>
 
                         <div id="nxt-btn">
-                            <button onclick="resetQuote()" class="btn btn-outline-info">Nxt</button>
+                            <button class="btn btn-outline-info">Nxt</button>
                         </div>
                     </div>
                 </fieldset>
@@ -145,7 +144,7 @@
         </div>
 
     </main>
-
+    <script type="module" src="/control-files/index.mjs"></script>
 </body>
 
 </html>
