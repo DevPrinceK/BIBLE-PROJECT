@@ -3,56 +3,45 @@ async function start() {
     let kjvJunk = await fetch('https://www.abibliadigital.com.br/api/books');
 
     // converts books to json
-    let kjv = await kjvJunk.json();
+    let bibleObj = await kjvJunk.json();
 
-    // display entire kjv
-    display(kjv);
+    // destructures the names and chapters
+    let [names, chapters] = getNamesAndChapters(bibleObj);
 
-    // calls the function that get names of the books
-    getNames(kjv);
-
-    // get number of chapters in each
-    getChapters(kjv);
+    // get text
+    getText('nvi', 'gn', 5, 2);
 
 
 }
 
 
-async function getVersions() {
-    let getVersions = await fetch('https://www.abibliadigital.com.br/api/versions');
+async function getText(versionHolder, abbrevHolder, chapterHolder, verseHolder) {
 
-    let versionJSON = await getVersions.json();
+    let url = `https://www.abibliadigital.com.br/api/verses/${versionHolder}/${abbrevHolder}/${chapterHolder}/${verseHolder}`;
 
-    // get chapters
-    getChapters(versionJSON);
-
-}
-
-
-async function getAllDetails() {
-    let allData = await fetch('https://www.abibliadigital.com.br/api/verses/:version/:gn/:2');
-}
-
-
-function greet(kjv, kjvJunk) {
     //
+    let getQuote = await fetch(url);
+
+    //https://www.abibliadigital.com.br/api/verses/nvi/gn/5/2
+
+    let getQuoteJson = await getQuote.json();
+
+    // 
+    let getQuoteText = await getQuoteJson.text;
+
+    // display text
+    display(getQuoteText);
+    //display(getQuote);
+
 }
+
 
 // gets all names of books
-function getNames(bibleObj) {
+function getNamesAndChapters(bibleObj) {
     let bookNames = Array.from(bibleObj).map(book => book.name);
 
-    //console.log(bookNames);
-    //console.log(typeof bookNames);
-}
-
-// gets all chapters of books  || NOTE can use this to generate the chapters dropdown
-function getChapters(bibleObj) {
-    let chapters = Array.from(bibleObj).map(book => book.chapters)
-    //display(chapters);
-
-    // traversing the chapter
-    traverseChapter(chapters[0]);
+    let bookChapters = Array.from(bibleObj).map(book => book.chapters)
+    return [bookNames, bookChapters];
 }
 
 
