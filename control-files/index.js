@@ -1,4 +1,8 @@
 async function start() {
+
+    let version = document.getElementById("");
+
+
     // fetch books
     let kjvJunk = await fetch('https://www.abibliadigital.com.br/api/books');
 
@@ -9,7 +13,7 @@ async function start() {
     let [names, chapters] = getNamesAndChapters(bibleObj);
 
     // get text
-    getText('nvi', 'gn', 5, 2);
+    getText('niv', 'gn', 5, 2);
 
 
 }
