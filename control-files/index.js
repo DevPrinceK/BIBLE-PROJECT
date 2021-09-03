@@ -1,16 +1,15 @@
 async function start() {
 
-    let version = document.getElementById("");
+    // let version = document.getElementById("");
 
+    // // fetch books
+    // let kjvJunk = await fetch('https://www.abibliadigital.com.br/api/books');
 
-    // fetch books
-    let kjvJunk = await fetch('https://www.abibliadigital.com.br/api/books');
+    // // converts books to json
+    // let bibleObj = await kjvJunk.json();
 
-    // converts books to json
-    let bibleObj = await kjvJunk.json();
-
-    // destructures the names and chapters
-    let [names, chapters] = getNamesAndChapters(bibleObj);
+    // // destructures the names and chapters
+    // let [names, chapters] = getNamesAndChapters(bibleObj);
 
     // get text
     getText('niv', 'gn', 5, 2);
